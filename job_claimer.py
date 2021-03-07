@@ -4,12 +4,15 @@ Takes a screenshot of android phone and looks for certain key words
 """
 
 #standard imports
-from PIL import Image
+import re
 
 #3rd party imports
-import pytesseract
 
-filename = '/home/wynand/screen.png'
-text = pytesseract.image_to_string(Image.open(filename))  # We'll use Pillow's Image class to open the image and pytesseract to detect the string in the image
+pattern = re.compile('(?<=node index="0")(((?!OfferItemTimes).)*)"Decline".*?"Claim".*?bounds="\[\d+,\d+\]\[\d+,\d+\]"')
 
-print (text)
+with open('/tmp/view.xml', 'r') as file:
+    data = file.read()
+
+all_offers = pattern.findall(data)
+
+print(all_offers)
