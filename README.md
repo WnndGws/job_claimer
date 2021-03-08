@@ -9,7 +9,7 @@
   * ~~ ` $ adb exec-out screencap -p > screen.png`~~
   * ~~Creates a file calles screen.png on my computer~~
 * ~~[] Read screenshot looking for given text~~
-* [] Create xml of whats on screen
+* [] Create xml of what's on screen
   * ` $ adb pull $(adb shell uiautomator dump | grep -oP '[^ ]+.xml') /tmp/view.xml`
 * [] Click on accept or decline for all jobs
   * Claiming jobs
