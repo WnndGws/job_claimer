@@ -10,7 +10,7 @@ import re
 
 pattern = re.compile('(?<=node index=\"0\")(((?!OfferItemTimes).)*)\"Decline\".*?\"Claim\".*?bounds=\"\[\d+,\d+\]\[\d+,\d+\]\"')
 
-with open('/home/wynand/4jobs.xml', 'r') as file:
+with open('/home/wynand/syncthing/work/4jobs.xml', 'r') as file:
     data = file.read()
 
 all_offers = pattern.findall(data)
